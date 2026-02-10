@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -211,10 +212,13 @@ color: gray;
   overflow-x: scroll;
   scroll-behavior: smooth;
   padding: 20px 40px;
+
+
 }
 
 .steps-container::-webkit-scrollbar {
   display: none;
+  
 }
 
 .step-card {
@@ -226,6 +230,7 @@ color: gray;
   align-items: center;
   gap: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  scroll-snap-align: start;
 }
 .steps-section h2{
 text-align: center;
