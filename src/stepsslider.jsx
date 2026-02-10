@@ -18,9 +18,12 @@ const StepsSlider = () => {
     const slider = sliderRef.current;
     if (!slider) return;
     const cards = slider.querySelectorAll(".step-card");
-    const nextIndex = currentIndex + 1 >= cards.length ? 0 : currentIndex + 1;
-    setCurrentIndex(nextIndex);
-    scrollToIndex(nextIndex);
+    setCurrentIndex(prevIndex => {
+  const nextIndex = prevIndex + 1 >= cards.length ? 0 : prevIndex + 1;
+  scrollToIndex(nextIndex);
+  return nextIndex;
+});
+
   };
 
   const scrollLeft = () => {
