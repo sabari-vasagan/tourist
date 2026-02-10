@@ -11,7 +11,7 @@ const ImageSlider = () => {
         unforgettable getaway with us.
     </h4><br /><br />
       <div className="slider-track">
-        <img src="./assets/body/tourist1.jpg" alt="" />
+        <img src="/assets/body/tourist1.jpg" alt="" />
         <img src="./assets/body/tourist2.jpg" alt="" />
         <img src="./assets/body/tourist3.jpg" alt="" />
         <img src="./assets/body/tourist4.jpg" alt="" />
@@ -21,7 +21,7 @@ const ImageSlider = () => {
         <img src="./assets/body/tourist8.jpg" alt="" />
 
         {/* duplicate for smooth loop */}
-        <img src="./assets/body/tourist1.jpg" alt="" />
+        <img src="/assets/body/tourist1.jpg" alt="" />
         <img src="./assets/body/tourist2.jpg" alt="" />
         <img src="./assets/body/tourist3.jpg" alt="" />
         <img src="./assets/body/tourist4.jpg" alt="" />
