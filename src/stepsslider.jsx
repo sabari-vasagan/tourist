@@ -39,7 +39,7 @@ const StepsSlider = () => {
            <h3>Himalaya</h3>
             <p>Explore the majestic Himalayas with stunning views and cool climate.</p>
           </div>
-          <img src="/assets/stepsslider/himalaya.jpg" alt="Himalaya" />
+          <img src="./assets/stepsslider/himalaya.jpg" alt="Himalaya" />
         </div>
 
         <div className="step-card">
@@ -48,7 +48,7 @@ const StepsSlider = () => {
             <h3>Goa</h3>
             <p>Enjoy the vibrant beaches of Goa with golden sands and nightlife.</p>
           </div>
-          <img src="/assets/stepsslider/goa.jpg" alt="Goa" />
+          <img src="./assets/stepsslider/goa.jpg" alt="Goa" />
         </div>
 
         <div className="step-card">
@@ -57,7 +57,7 @@ const StepsSlider = () => {
             <h3>Amazon</h3>
             <p>Experience the magic of the Amazon rainforest and its wonders.</p>
           </div>
-          <img src="/assets/stepsslider/amazon.jpg" alt="Amazon" />
+          <img src="./assets/stepsslider/amazon.jpg" alt="Amazon" />
         </div>
 
         <div className="step-card">
@@ -66,7 +66,7 @@ const StepsSlider = () => {
             <h3>Temple</h3>
             <p>Visit ancient temples to experience peace and spirituality.</p>
           </div>
-          <img src="/assets/stepsslider/temple.jpg" alt="Temple" />
+          <img src="./assets/stepsslider/temple.jpg" alt="Temple" />
         </div>
       </div>
 
