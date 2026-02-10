@@ -32,28 +32,19 @@ const StepsSlider = () => {
     scrollToIndex(prevIndex);
   };
 
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     scrollRight();
-  //   }, 2000);
-
-  //   return () => clearInterval(interval);
-  // }, [currentIndex]);
-
-  useEffect(() => {
+useEffect(() => {
   const slider = sliderRef.current;
   if (!slider) return;
 
   const imgs = slider.querySelectorAll("img");
   let loadedCount = 0;
+  let interval;
 
   const checkAllLoaded = () => {
     loadedCount++;
     if (loadedCount === imgs.length) {
-      // start auto-scroll only after all images loaded
-      const interval = setInterval(scrollRight, 2000);
-      return () => clearInterval(interval); // clear on unmount
+      // Start auto-scroll only after all images loaded
+      interval = setInterval(scrollRight, 2000);
     }
   };
 
@@ -61,6 +52,10 @@ const StepsSlider = () => {
     if (img.complete) checkAllLoaded();
     else img.addEventListener("load", checkAllLoaded);
   });
+
+  return () => {
+    if (interval) clearInterval(interval); // cleanup
+  };
 }, []);
 
 
