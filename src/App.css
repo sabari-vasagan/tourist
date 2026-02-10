@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #e9e9e9;
+  color: white;
+
+}
+
+/* NAVBAR */
+.navbar {
+  position: absolute;   /* KEY */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;          /* Stay above hero image */
+  padding: 20px 0;
+}
+
+.navbar-container {
+  width: 90%;
+  margin: auto;
+  background: rgba(215, 230, 228, 0.9);  /* purple glass effect */
+  border-radius: 50px;
+  padding: 14px 30px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  color: #fff;
+}
+
+.nav-links li:hover{
+  color: rgb(2, 235, 235);
+}
+.nav-links li {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url("/assets/home1.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  color: white;
+
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-left {
+  position: relative;
+  z-index: 2;
+  
+}
+
+
+.hero-left h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-left h1  {
+  color: #f8f8f8;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  margin-top: -200px;
+  padding-left: 290px;
+
+
+  opacity: 0;
+  transform: translateY(25px);
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.hero-left h3 {
+  color: #a5e0f7;
+  margin-top: 2px;
+  padding-left: 500px;
+
+  opacity: 0;
+  transform: translateY(25px);
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.hero-left button{
+  background: rgb(0, 253, 253);
+  border-radius: 30px;
+  height: 50px;
+  width: 150px;
+  margin-left: 500px;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+.hero-left button:hover{
+  background-color: #fff;
+  cursor: pointer;
+  color: aqua;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-left p {
+  color: #cbd5f5;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+
+
+.hero-right img {
+  width: 480px;
+  max-width: 100%;
+}
+
+/* slider images*/
+
+.image-slider {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.slider-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scroll 50s linear infinite;
+}
+
+.slider-track img {
+  width: 260px;          
+  height: 360px;        
+  object-fit: cover;
+  border-radius: 24px;  
+  flex-shrink: 0;
+}
+.image-slider h2{
+text-align: center;
+color: rgb(14, 1, 1);
+}
+.image-slider h4{
+text-align: center;
+color: gray;
+
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/*stepsslider*/
+.steps-section {
+  padding: 80px 0;
+  position: relative;
+  background: #fff;
+  
+}
+
+.steps-container {
+  display: flex;
+  gap: 24px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 20px 40px;
+}
+
+.steps-container::-webkit-scrollbar {
+  display: none;
+}
+
+.step-card {
+  min-width: 600px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.steps-section h2{
+text-align: center;
+color: rgb(14, 1, 1);
+}
+/* ONLY move the h1 number */
+.step-text .step-number  {
+  font-size: 48px;
+  color: #0f172a;
+  font-weight: 700;
+ 
+  margin-bottom: 4px;
+}
+.step-text h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.step-text p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.step-card img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Arrows */
+.slider-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 10px 40px 0;
+}
+
+.arrow-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-btn.dark {
+  background: #0f172a;
+  color: white;
+  border: none;
+}
+/*booking*/
+.tours-section {
+  padding: auto;
+  background: #fff;
+}
+
+.tours-container {
+  display:inline-flex;
+  
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tour-card {
+  width: 32%;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-10px);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.tour-content {
+  padding: 20px;
+}
+
+.tour-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tour-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.tour-price {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tour-content p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.tour-btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid #cbd5e1;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.tour-btn:hover {
+  background: #0f172a;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .tour-card {
+    width: 100%;
+  }
+}
+
+/*mediaquery*/
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  .hero-right img {
+    margin-top: 40px;
+    width: 320px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
