@@ -18,12 +18,9 @@ const StepsSlider = () => {
     const slider = sliderRef.current;
     if (!slider) return;
     const cards = slider.querySelectorAll(".step-card");
-    setCurrentIndex(prevIndex => {
-  const nextIndex = prevIndex + 1 >= cards.length ? 0 : prevIndex + 1;
-  scrollToIndex(nextIndex);
-  return nextIndex;
-});
-
+    const nextIndex = currentIndex + 1 >= cards.length ? 0 : currentIndex + 1;
+    setCurrentIndex(nextIndex);
+    scrollToIndex(nextIndex);
   };
 
   const scrollLeft = () => {
@@ -35,32 +32,14 @@ const StepsSlider = () => {
     scrollToIndex(prevIndex);
   };
 
-useEffect(() => {
-  const slider = sliderRef.current;
-  if (!slider) return;
 
-  const imgs = slider.querySelectorAll("img");
-  let loadedCount = 0;
-  let interval;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      scrollRight();
+    }, 2000);
 
-  const checkAllLoaded = () => {
-    loadedCount++;
-    if (loadedCount === imgs.length) {
-      // Start auto-scroll only after all images loaded
-      interval = setInterval(scrollRight, 2000);
-    }
-  };
-
-  imgs.forEach(img => {
-    if (img.complete) checkAllLoaded();
-    else img.addEventListener("load", checkAllLoaded);
-  });
-
-  return () => {
-    if (interval) clearInterval(interval); // cleanup
-  };
-}, []);
-
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
 
   return (
