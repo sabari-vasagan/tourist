@@ -4,6 +4,7 @@ import Hero from "./hero";
 import ImageSlider from "./sliderimg";
 import StepsSlider from "./stepsslider";
 import ToursSection from"./booking";
+import Footer from"./footer";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <ImageSlider/>
       <StepsSlider/>
       <ToursSection/>
+      <Footer/>
     </div>
   );
 }
